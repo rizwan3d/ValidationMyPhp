@@ -1,0 +1,20 @@
+{
+    "name": "rizwan3d/ValidationMyPhp",
+    "description": "PHP validation library",
+    "type": "library",
+    "require": {
+        "php": ">=7.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhammad Rizwan",
+            "email": "allgame45@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ValidationMyPhp\\": "src/ValidationMyPhp/"
+        }
+    }
+}
