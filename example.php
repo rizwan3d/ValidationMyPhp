@@ -3,7 +3,7 @@
 
 require_once('src/ValidationMyPhp/Validation.php');
 
-use ValidationMyPhp\Validation;
+use Rizwan3D\ValidationMyPhp\Validation;
 
 Validation::$DB_HOST = '127.0.0.1';
 Validation::$DB_NAME = 'database';

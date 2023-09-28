@@ -1,5 +1,5 @@
 <?php
-namespace ValidationMyPhp;
+namespace Rizwan3D\ValidationMyPhp;
 
 use PDO;
 
