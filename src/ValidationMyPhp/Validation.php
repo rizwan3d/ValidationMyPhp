@@ -14,6 +14,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'secure'       => 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character',
     'unique'       => 'The %s already exists',
     'exist'        => 'The %s cannot exists in database',
+    'date'         => 'The %s must be a date in %s format',
 ];
 
 class Validation
