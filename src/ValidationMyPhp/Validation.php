@@ -57,10 +57,10 @@ class Validation
                 } else {
                     $rule_name = trim($rule);
                 }
-                
+
                 $fn = '\\Rizwan3D\\ValidationMyPhp\\Rules\\'.ucfirst($rule_name);
 
-                if (class_exists($fn,true)) {
+                if (class_exists($fn, true)) {
                     $pass = (new $fn())->check($data, $field, ...$params);
                     if (!$pass) {
                         // get the error message for a specific field and rule if exists

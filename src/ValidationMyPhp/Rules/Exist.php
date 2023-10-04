@@ -1,10 +1,12 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
+
 use Rizwan3D\ValidationMyPhp\Database;
 
 class Exist
 {
-     /**
+    /**
      * Return true if the $value is exist in the column of a table.
      *
      * @param array  $data

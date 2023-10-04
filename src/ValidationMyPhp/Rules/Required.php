@@ -1,4 +1,5 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Required
@@ -11,7 +12,8 @@ class Required
      *
      * @return bool
      */
-    public function check(array $data, string $field): bool{
+    public function check(array $data, string $field): bool
+    {
         return isset($data[$field]) && trim($data[$field]) !== '';
     }
 }

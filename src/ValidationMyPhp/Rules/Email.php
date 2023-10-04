@@ -1,9 +1,10 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Email
 {
-/**
+    /**
      * Return true if the value is a valid email.
      *
      * @param array  $data

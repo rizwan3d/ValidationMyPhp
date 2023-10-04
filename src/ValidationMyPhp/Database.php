@@ -1,5 +1,7 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp;
+
 use PDO;
 
 class Database
