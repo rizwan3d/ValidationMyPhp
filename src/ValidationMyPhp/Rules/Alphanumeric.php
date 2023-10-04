@@ -1,7 +1,9 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
-class Alphanumeric{
+class Alphanumeric
+{
     /**
      * Return true if a string is alphanumeric.
      *

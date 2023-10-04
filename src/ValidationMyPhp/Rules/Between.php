@@ -1,4 +1,5 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Between

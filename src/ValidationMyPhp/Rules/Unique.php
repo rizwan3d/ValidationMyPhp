@@ -1,9 +1,10 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Unique
 {
-     /**
+    /**
      * Return true if the $value is exist in the column of a table.
      *
      * @param array  $data

@@ -15,7 +15,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'unique'       => 'The %s already exists',
     'exist'        => 'The %s cannot exists in database',
     'date'         => 'The %s must be a date in %s format',
-    'url'          => 'The %s is not valid url'
+    'url'          => 'The %s is not valid url',
 ];
 
 class Validation
@@ -58,10 +58,10 @@ class Validation
                 } else {
                     $rule_name = trim($rule);
                 }
-                
+
                 $fn = '\\Rizwan3D\\ValidationMyPhp\\Rules\\'.ucfirst($rule_name);
 
-                if (class_exists($fn,true)) {
+                if (class_exists($fn, true)) {
                     $pass = (new $fn())->check($data, $field, ...$params);
                     if (!$pass) {
                         // get the error message for a specific field and rule if exists

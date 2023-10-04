@@ -1,9 +1,10 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Same
 {
-   /**
+    /**
      * Return true if a string equals the other.
      *
      * @param array  $data

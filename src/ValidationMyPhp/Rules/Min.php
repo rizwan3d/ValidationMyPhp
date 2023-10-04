@@ -1,9 +1,10 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Min
 {
-     /**
+    /**
      * Return true if a string has at least min length.
      *
      * @param array  $data

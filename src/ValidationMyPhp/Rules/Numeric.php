@@ -1,9 +1,10 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Numeric
 {
-     /**
+    /**
      * Return true if a string is numeric.
      *
      * @param array  $data
