@@ -76,6 +76,7 @@ You can specify various validation rules for each field in the `fields` array. H
 - `min:X`: The field's length must be at least X characters.
 - `between:X,Y`: The field's length must be between X and Y characters.
 - `alphanumeric`: The field must contain only alphanumeric characters.
+- `alphanumeric`: The field must contain only numeric characters.d
 - `unique:table,column`: Check if the field value is unique in the specified database table and column.
 - `exist:table,column`: Check if the field value is exist in the specified database table and column.
 - `email`: Validate if the field is a valid email address.
