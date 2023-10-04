@@ -256,7 +256,6 @@ class Validation
      */
     public function is_unique(array $data, string $field, string $table, string $column): bool
     {
-        
         return $this->is_exist($data, $field, $table, $column) === false;
     }
 
