@@ -83,6 +83,8 @@ You can specify various validation rules for each field in the `fields` array. H
 - `secure`: Validate if the field contains a secure password (custom rule).
 - `same:field_name`: Validate if the field is the same as another field (e.g., password confirmation).
 - `date:format`: Validate if the field is the date in provided formate.
+- `url`: Validate if the field is the valid URL.
+- `url:formate`: Validate if the field is the valid URL in provided formate (such as http,https,ftp,custom,mailto,jdbc). Multiple formatcan be passed by saprting with ','.
 
 ### Custom Error Messages
 
