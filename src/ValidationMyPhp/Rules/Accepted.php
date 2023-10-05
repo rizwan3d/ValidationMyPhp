@@ -10,6 +10,7 @@ class Accepted
     /**
      * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
     public function check(array $data, string $field): bool
@@ -19,6 +20,7 @@ class Accepted
         }
 
         $acceptables = ['yes', 'on', '1', 1, true, 'true'];
+
         return in_array($data[$field], $acceptables, true);
     }
 }
