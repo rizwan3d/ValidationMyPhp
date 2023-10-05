@@ -14,7 +14,7 @@ You can easily install the `Validation` class and its dependencies using Compose
 Once Composer is installed, you can add the `rizwan3d/SharpRISCV` package to your project by running the following command in your project's root directory:
 
 ```bash
-composer require rizwan3d/SharpRISCV
+composer require rizwan3d/ValidationMyPhp
 ```
 
 ### Initialization
