@@ -20,6 +20,7 @@ class Accepted
         }
 
         $acceptables = ['yes', 'on', '1', 1, true, 'true'];
+
         return in_array($data[$field], $acceptables, true);
     }
 }
