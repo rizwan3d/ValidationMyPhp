@@ -82,6 +82,7 @@ You can specify various validation rules for each field in the `fields` array. H
 - `email`: Validate if the field is a valid email address.
 - `secure`: Validate if the field contains a secure password (custom rule).
 - `same:field_name`: Validate if the field is the same as another field (e.g., password confirmation).
+- `date:format`: Validate if the field is the date in provided formate.
 
 ### Custom Error Messages
 
