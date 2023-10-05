@@ -1,36 +1,39 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp;
 
 use PDO;
 
 const DEFAULT_VALIDATION_ERRORS = [
-    'required' => 'Please enter the %s',
-    'email' => 'The %s is not a valid email address',
-    'min' => 'The %s must have at least %s characters',
-    'max' => 'The %s must have at most %s characters',
-    'between' => 'The %s must have between %d and %d characters',
-    'same' => 'The %s must match with %s',
+    'required'     => 'Please enter the %s',
+    'email'        => 'The %s is not a valid email address',
+    'min'          => 'The %s must have at least %s characters',
+    'max'          => 'The %s must have at most %s characters',
+    'between'      => 'The %s must have between %d and %d characters',
+    'same'         => 'The %s must match with %s',
     'alphanumeric' => 'The %s should have only letters and numbers',
-    'secure' => 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character',
-    'unique' => 'The %s already exists',
+    'secure'       => 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character',
+    'unique'       => 'The %s already exists',
 ];
 
 class Validation
 {
-
-    public static $DB_HOST, $DB_NAME, $DB_USER, $DB_PASSWORD = "";
+    public static $DB_HOST;
+    public static $DB_NAME;
+    public static $DB_USER;
+    public static $DB_PASSWORD = '';
 
     /**
-     * Validate
+     * Validate.
+     *
      * @param array $data
      * @param array $fields
      * @param array $messages
+     *
      * @return array
      */
     public function validate(array $data, array $fields, array $messages = []): array
     {
-
-
         // get the message rules
         $rule_messages = array_filter($messages, function ($message) {
             return is_string($message);
@@ -41,7 +44,6 @@ class Validation
         $errors = [];
 
         foreach ($fields as $field => $option) {
-
             $rules = $this->separator($option, '|');
 
             foreach ($rules as $rule) {
@@ -50,12 +52,12 @@ class Validation
                 // if the rule has parameters e.g., min: 1
                 if (strpos($rule, ':')) {
                     [$rule_name, $param_str] = $this->separator($rule, ':');
-                    $params                  = $this->separator($param_str, ',');
+                    $params = $this->separator($param_str, ',');
                 } else {
                     $rule_name = trim($rule);
                 }
                 // by convention, the callback should be is_<rule> e.g.,is_required
-                $fn = 'is_' . $rule_name;
+                $fn = 'is_'.$rule_name;
 
                 if (is_callable([$this, $fn])) {
                     $pass = $this->$fn($data, $field, ...$params);
@@ -76,23 +78,27 @@ class Validation
     }
 
     /**
-     * Return true if a string is not empty
-     * @param array $data
+     * Return true if a string is not empty.
+     *
+     * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
-    function is_required(array $data, string $field): bool
+    public function is_required(array $data, string $field): bool
     {
         return isset($data[$field]) && trim($data[$field]) !== '';
     }
 
     /**
-     * Return true if the value is a valid email
-     * @param array $data
+     * Return true if the value is a valid email.
+     *
+     * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
-    function is_email(array $data, string $field): bool
+    public function is_email(array $data, string $field): bool
     {
         if (empty($data[$field])) {
             return true;
@@ -102,13 +108,15 @@ class Validation
     }
 
     /**
-     * Return true if a string has at least min length
-     * @param array $data
+     * Return true if a string has at least min length.
+     *
+     * @param array  $data
      * @param string $field
-     * @param int $min
+     * @param int    $min
+     *
      * @return bool
      */
-    function is_min(array $data, string $field, int $min): bool
+    public function is_min(array $data, string $field, int $min): bool
     {
         if (!isset($data[$field])) {
             return true;
@@ -118,13 +126,15 @@ class Validation
     }
 
     /**
-     * Return true if a string cannot exceed max length
-     * @param array $data
+     * Return true if a string cannot exceed max length.
+     *
+     * @param array  $data
      * @param string $field
-     * @param int $max
+     * @param int    $max
+     *
      * @return bool
      */
-    function is_max(array $data, string $field, int $max): bool
+    public function is_max(array $data, string $field, int $max): bool
     {
         if (!isset($data[$field])) {
             return true;
@@ -134,30 +144,34 @@ class Validation
     }
 
     /**
-     * @param array $data
+     * @param array  $data
      * @param string $field
-     * @param int $min
-     * @param int $max
+     * @param int    $min
+     * @param int    $max
+     *
      * @return bool
      */
-    function is_between(array $data, string $field, int $min, int $max): bool
+    public function is_between(array $data, string $field, int $min, int $max): bool
     {
         if (!isset($data[$field])) {
             return true;
         }
 
         $len = mb_strlen($data[$field]);
+
         return $len >= $min && $len <= $max;
     }
 
     /**
-     * Return true if a string equals the other
-     * @param array $data
+     * Return true if a string equals the other.
+     *
+     * @param array  $data
      * @param string $field
      * @param string $other
+     *
      * @return bool
      */
-    function is_same(array $data, string $field, string $other): bool
+    public function is_same(array $data, string $field, string $other): bool
     {
         if (isset($data[$field], $data[$other])) {
             return $data[$field] === $data[$other];
@@ -171,12 +185,14 @@ class Validation
     }
 
     /**
-     * Return true if a string is alphanumeric
-     * @param array $data
+     * Return true if a string is alphanumeric.
+     *
+     * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
-    function is_alphanumeric(array $data, string $field): bool
+    public function is_alphanumeric(array $data, string $field): bool
     {
         if (!isset($data[$field])) {
             return true;
@@ -186,53 +202,58 @@ class Validation
     }
 
     /**
-     * Return true if a password is secure
-     * @param array $data
+     * Return true if a password is secure.
+     *
+     * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
-    function is_secure(array $data, string $field): bool
+    public function is_secure(array $data, string $field): bool
     {
         if (!isset($data[$field])) {
             return false;
         }
 
         $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
+
         return preg_match($pattern, $data[$field]);
     }
 
-
     /**
      * Connect to the database and returns an instance of PDO class
-     * or false if the connection fails
+     * or false if the connection fails.
      *
      * @return PDO
      */
-    function db(): PDO
+    public function db(): PDO
     {
         static $pdo;
         // if the connection is not initialized
         // connect to the database
         if (!$pdo) {
             $pdo = new PDO(
-                sprintf("mysql:host=%s;dbname=%s;charset=UTF8", Validation::$DB_HOST, Validation::$DB_NAME),
+                sprintf('mysql:host=%s;dbname=%s;charset=UTF8', Validation::$DB_HOST, Validation::$DB_NAME),
                 Validation::$DB_USER,
                 Validation::$DB_PASSWORD,
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
             );
         }
+
         return $pdo;
     }
 
     /**
-     * Return true if the $value is unique in the column of a table
-     * @param array $data
+     * Return true if the $value is unique in the column of a table.
+     *
+     * @param array  $data
      * @param string $field
      * @param string $table
      * @param string $column
+     *
      * @return bool
      */
-    function is_unique(array $data, string $field, string $table, string $column): bool
+    public function is_unique(array $data, string $field, string $table, string $column): bool
     {
         if (!isset($data[$field])) {
             return true;
@@ -241,12 +262,13 @@ class Validation
         $sql = "SELECT $column FROM $table WHERE $column = :value";
 
         $stmt = $this->db()->prepare($sql);
-        $stmt->bindValue(":value", $data[$field]);
+        $stmt->bindValue(':value', $data[$field]);
 
         $stmt->execute();
 
         return $stmt->fetchColumn() === false;
     }
+
     // Split the array by a separator, trim each element
     // and return the array
     private function separator($str, $separator)
