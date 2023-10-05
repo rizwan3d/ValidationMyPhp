@@ -12,6 +12,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'between'      => 'The %s must have between %d and %d characters',
     'same'         => 'The %s must match with %s',
     'alphanumeric' => 'The %s should have only letters and numbers',
+    'numeric'      => 'The %s should have only numbers',
     'secure'       => 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character',
     'unique'       => 'The %s already exists',
     'exist'        => 'The %s cannot exists in database',
@@ -200,6 +201,23 @@ class Validation
         }
 
         return ctype_alnum($data[$field]);
+    }
+
+    /**
+     * Return true if a string is numeric.
+     *
+     * @param array  $data
+     * @param string $field
+     *
+     * @return bool
+     */
+    public function is_numeric(array $data, string $field): bool
+    {
+        if (!isset($data[$field])) {
+            return true;
+        }
+
+        return is_numeric($data[$field]);
     }
 
     /**
