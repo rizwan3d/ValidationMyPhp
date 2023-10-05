@@ -15,6 +15,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'unique'       => 'The %s already exists',
     'exist'        => 'The %s cannot exists in database',
     'date'         => 'The %s must be a date in %s format',
+    'url'          => 'The %s is not valid url'
 ];
 
 class Validation
