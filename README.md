@@ -86,6 +86,7 @@ You can specify various validation rules for each field in the `fields` array. H
 - `url`: Validate if the field is the valid URL.
 - `url:formate`: Validate if the field is the valid URL in provided formate (such as http,https,ftp,custom,mailto,jdbc). Multiple formatcan be passed by saprting with ','.
 - `accepted`: Validate if the field has yes, on, 1 and true value. 
+- `after:time`: Validate if the field has date after provided time. 
 
 ### Custom Error Messages
 
