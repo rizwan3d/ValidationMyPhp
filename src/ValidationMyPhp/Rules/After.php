@@ -11,6 +11,7 @@ class After
      * @param array  $data
      * @param string $field
      * @param string $time
+     *
      * @return bool
      */
     public function check(array $data, string $field, string $time): bool

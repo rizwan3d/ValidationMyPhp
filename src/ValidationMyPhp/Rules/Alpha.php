@@ -10,6 +10,7 @@ class Alpha
     /**
      * @param array  $data
      * @param string $field
+     *
      * @return bool
      */
     public function check(array $data, string $field): bool
