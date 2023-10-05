@@ -3,6 +3,10 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Between
 {
+
+    /** @var string */
+    public $message = 'The %s must have between %d and %d characters';
+
     /**
      * @param array  $data
      * @param string $field

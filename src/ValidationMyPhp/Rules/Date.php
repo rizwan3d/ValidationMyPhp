@@ -3,6 +3,10 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Date
 {
+
+    /** @var string */
+    public $message = 'The %s must be a date in %s format';
+
     /**
      * Return true if a string is in valid Date formate.
      *

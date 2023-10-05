@@ -3,6 +3,10 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Min
 {
+
+    /** @var string */
+    public $message = 'The %s must have at least %s characters';
+
      /**
      * Return true if a string has at least min length.
      *

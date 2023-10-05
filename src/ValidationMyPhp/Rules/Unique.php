@@ -3,6 +3,10 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Unique
 {
+
+    /** @var string */
+    public $message = 'The %s already exists';
+
      /**
      * Return true if the $value is exist in the column of a table.
      *

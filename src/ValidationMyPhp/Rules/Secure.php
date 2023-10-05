@@ -3,7 +3,11 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Secure
 {
-    /**
+ 
+    /** @var string */
+    public $message = 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character';
+
+   /**
      * Return true if a password is secure.
      *
      * @param array  $data

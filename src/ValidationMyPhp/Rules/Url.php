@@ -3,7 +3,11 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Url
 {
-    /**
+ 
+    /** @var string */
+    public $message = 'The %s is not valid url';
+
+   /**
      * Return true if a string is valid URL.
      *
      * @param array  $data

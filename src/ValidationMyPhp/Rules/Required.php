@@ -3,6 +3,10 @@ namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Required
 {
+
+    /** @var string */
+    public $message = 'Please enter the %s';
+
     /**
      * Return true if a string is not empty.
      *
