@@ -1,5 +1,5 @@
 {
-    "name": "rizwan3d/ValidationMyPhp",
+    "name": "rizwan3d/validation-my-php",
     "description": "PHP validation library",
     "type": "library",
     "require": {
