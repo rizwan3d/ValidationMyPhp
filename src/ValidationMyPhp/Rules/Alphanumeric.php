@@ -1,8 +1,9 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
-class Alphanumeric{
-
+class Alphanumeric
+{
     /** @var string */
     public $message = 'The %s should have only letters and numbers';
 

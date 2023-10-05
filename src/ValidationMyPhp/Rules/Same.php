@@ -1,13 +1,13 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Same
 {
-
     /** @var string */
     public $message = 'The %s must match with %s';
 
-   /**
+    /**
      * Return true if a string equals the other.
      *
      * @param array  $data

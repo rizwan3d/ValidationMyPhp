@@ -1,10 +1,11 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
+
 use Rizwan3D\ValidationMyPhp\Database;
 
 class Exist
 {
- 
     /** @var string */
     public $message = 'The %s cannot exists in database';
 

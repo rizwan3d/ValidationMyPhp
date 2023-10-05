@@ -1,9 +1,9 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Email
 {
-
     /** @var string */
     public $message = 'The %s is not a valid email address';
 
