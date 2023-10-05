@@ -1,7 +1,7 @@
 
 <?php
 
-require_once('src/ValidationMyPhp/Validation.php');
+require_once('./vendor/autoload.php');
 
 use Rizwan3D\ValidationMyPhp\Validation;
 
