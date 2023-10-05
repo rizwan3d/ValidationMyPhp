@@ -2,23 +2,23 @@
 
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
-class Accepted
+class After
 {
     /** @var string */
-    public $message = 'The %s must be accepted';
+    public $message = 'The %s must be a date after %s.';
 
     /**
      * @param array  $data
      * @param string $field
+     * @param string $time
      * @return bool
      */
-    public function check(array $data, string $field): bool
+    public function check(array $data, string $field, string $time): bool
     {
         if (!isset($data[$field])) {
             return true;
         }
 
-        $acceptables = ['yes', 'on', '1', 1, true, 'true'];
-        return in_array($data[$field], $acceptables, true);
+        return strtotime($time) < strtotime($data[$field]);
     }
 }
