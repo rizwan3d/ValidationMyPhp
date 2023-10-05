@@ -14,6 +14,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'alphanumeric' => 'The %s should have only letters and numbers',
     'secure'       => 'The %s must have between 8 and 64 characters and contain at least one number, one  upper case letter, one lower case letter and one special character',
     'unique'       => 'The %s already exists',
+    'exist'        => 'The %s cannot exists in database',
 ];
 
 class Validation
@@ -255,6 +256,22 @@ class Validation
      */
     public function is_unique(array $data, string $field, string $table, string $column): bool
     {
+        
+        return $this->is_exist($data, $field, $table, $column) === false;
+    }
+
+    /**
+     * Return true if the $value is exist in the column of a table.
+     *
+     * @param array  $data
+     * @param string $field
+     * @param string $table
+     * @param string $column
+     *
+     * @return bool
+     */
+    public function is_exist(array $data, string $field, string $table, string $column): bool
+    {
         if (!isset($data[$field])) {
             return true;
         }
@@ -266,7 +283,7 @@ class Validation
 
         $stmt->execute();
 
-        return $stmt->fetchColumn() === false;
+        return $stmt->fetchColumn();
     }
 
     // Split the array by a separator, trim each element
