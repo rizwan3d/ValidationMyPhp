@@ -11,7 +11,7 @@ The `Validation` class is a PHP utility for performing data validation and error
 
 You can easily install the `Validation` class and its dependencies using Composer. If you haven't already installed Composer globally, you can do so by following the instructions on the [Composer website](https://getcomposer.org/download/).
 
-Once Composer is installed, you can add the `rizwan3d/SharpRISCV` package to your project by running the following command in your project's root directory:
+Once Composer is installed, you can add the `validation-my-php` package to your project by running the following command in your project's root directory:
 
 ```bash
 composer require rizwan3d/validation-my-php
