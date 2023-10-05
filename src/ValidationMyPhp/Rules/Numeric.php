@@ -1,13 +1,13 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Numeric
 {
-
     /** @var string */
     public $message = 'The %s should have only numbers';
 
-     /**
+    /**
      * Return true if a string is numeric.
      *
      * @param array  $data

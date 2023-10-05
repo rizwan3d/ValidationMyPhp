@@ -1,13 +1,13 @@
 <?php
+
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Max
 {
- 
     /** @var string */
     public $message = 'The %s must have at most %s characters';
 
-   /**
+    /**
      * Return true if a string cannot exceed max length.
      *
      * @param array  $data

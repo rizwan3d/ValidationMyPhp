@@ -19,7 +19,7 @@ class Validation
      * @return array
      */
     public function validate(array $data, array $fields, array $messages = []): array
-    {        
+    {
         $errors = [];
 
         foreach ($fields as $field => $option) {
@@ -35,10 +35,10 @@ class Validation
                 } else {
                     $rule_name = trim($rule);
                 }
-                
+
                 $fn = '\\Rizwan3D\\ValidationMyPhp\\Rules\\'.ucfirst($rule_name);
 
-                if (class_exists($fn,true)) {
+                if (class_exists($fn, true)) {
                     $rule = new $fn();
                     $pass = $rule->check($data, $field, ...$params);
                     if (!$pass) {
