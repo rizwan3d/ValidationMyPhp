@@ -2,6 +2,10 @@
 namespace Rizwan3D\ValidationMyPhp\Rules;
 
 class Alphanumeric{
+
+    /** @var string */
+    public $message = 'The %s should have only letters and numbers';
+
     /**
      * Return true if a string is alphanumeric.
      *
