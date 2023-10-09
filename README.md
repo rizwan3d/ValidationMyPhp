@@ -88,6 +88,7 @@ You can specify various validation rules for each field in the `fields` array. H
 - `accepted`: Validate if the field has yes, on, 1 and true value. 
 - `after:time`: Validate if the field has date after provided time. 
 - `alpha`: Validate if the field must contain only alphabetic characters. 
+- `extension`: Validates if the given File Extension is Valid.
 
 ### Custom Error Messages
 
