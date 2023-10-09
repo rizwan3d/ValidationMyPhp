@@ -96,3 +96,8 @@ You can provide custom error messages for each validation rule. In the example, 
 ## Conclusion
 
 The `Validation` class simplifies the process of validating user input data in PHP applications. It allows you to define validation rules, apply them to data, and retrieve error messages for fields that fail validation. This helps improve the security and reliability of your application by ensuring that user input meets your criteria.
+
+## Support:
+<p><a href="https://www.buymeacoffee.com/rizwan3d"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="rizwan3d" /></a></p><br><br><br>
+
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/rizwan3d) 
