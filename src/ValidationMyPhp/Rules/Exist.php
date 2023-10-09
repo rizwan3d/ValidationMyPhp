@@ -7,7 +7,7 @@ use Rizwan3D\ValidationMyPhp\Database;
 class Exist
 {
     /** @var string */
-    public $message = 'The %s cannot exists in database';
+    public $message = 'The %s must exists in database';
 
     /**
      * Return true if the $value is exist in the column of a table.
