@@ -24,7 +24,7 @@ class Extension
         }
 
         $ext = strtolower(pathinfo($data[$field], PATHINFO_EXTENSION));
-        
+
         return ($ext && in_array($ext, $allowedExtensions)) ? true : false;
     }
 }
