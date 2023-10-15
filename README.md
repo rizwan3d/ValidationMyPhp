@@ -78,7 +78,9 @@ You can specify various validation rules for each field in the `fields` array. H
 - `alphanumeric`: The field must contain only alphanumeric characters.
 - `numeric`: The field must contain only numeric characters.d
 - `unique:table,column`: Check if the field value is unique in the specified database table and column.
+- `unique:table,column,soft_delete_col`: Check if the field value is unique in the specified database table and column.
 - `exist:table,column`: Check if the field value is exist in the specified database table and column.
+- `exist:table,column,soft_delete_col`: Check if the field value is exist in the specified database table and column.
 - `email`: Validate if the field is a valid email address.
 - `secure`: Validate if the field contains a secure password (custom rule).
 - `same:field_name`: Validate if the field is the same as another field (e.g., password confirmation).
