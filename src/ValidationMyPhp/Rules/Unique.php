@@ -17,7 +17,7 @@ class Unique
      *
      * @return bool
      */
-    public function check(array $data, string $field, string $table, string $column,string $columnSoftDel = null): bool
+    public function check(array $data, string $field, string $table, string $column, string $columnSoftDel = null): bool
     {
         return (new Exist())->check($data, $field, $table, $column, $columnSoftDel) === false;
     }
