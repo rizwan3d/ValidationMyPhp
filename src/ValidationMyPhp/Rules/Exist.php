@@ -19,13 +19,17 @@ class Exist
      *
      * @return bool
      */
-    public function check(array $data, string $field, string $table, string $column): bool
+    public function check(array $data, string $field, string $table, string $column,string $columnSoftDel = null): bool
     {
         if (!isset($data[$field])) {
             return true;
         }
 
         $sql = "SELECT $column FROM $table WHERE $column = :value";
+        if(isset($columnSoftDel))
+        {
+            $sql .= " AND $columnSoftDel IS NULL";
+        }
 
         $stmt = Database::db()->prepare($sql);
         $stmt->bindValue(':value', $data[$field]);
