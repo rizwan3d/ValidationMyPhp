@@ -1,6 +1,7 @@
 <?php
 
 namespace Rizwan3D\ValidationMyPhp;
+use Rizwan3D\ValidationMyPhp\Rules\Required;
 
 class Validation
 {
@@ -26,7 +27,7 @@ class Validation
             $rules = $this->separator($option, '|');
 
             if (!in_array('required',$rules)) {
-                if (empty($data[$field])) {
+                if (!(new Required())->check($data,$field)) {
                     continue;
                 }
             }
