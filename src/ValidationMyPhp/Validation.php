@@ -44,7 +44,7 @@ class Validation
                     if (!$pass) {
                         // get the error message for a specific field and rule if exists
                         // otherwise get the error message from the $validation_errors
-                        $errors[$field] = sprintf(
+                        $errors[$field][] = sprintf(
                             $messages[$field][$rule_name] ?? $rule->message,
                             $field,
                             ...$params
