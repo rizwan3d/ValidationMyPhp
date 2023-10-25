@@ -25,6 +25,12 @@ class Validation
         foreach ($fields as $field => $option) {
             $rules = $this->separator($option, '|');
 
+            if (!in_array('required',$rules)) {
+                if (empty($data[$field])) {
+                    continue;
+                }
+            }
+
             foreach ($rules as $rule) {
                 // get rule name params
                 $params = [];
