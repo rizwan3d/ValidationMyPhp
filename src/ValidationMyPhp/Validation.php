@@ -50,12 +50,10 @@ class Validation
                     $rule = new $fn();
                     $pass = $rule->check($data, $field, ...$params);
                     if (!$pass) {
-
                         $msg = $rule->message;
-                        if(is_array($messages[$field])){
+                        if (is_array($messages[$field])) {
                             $msg = $messages[$field][$rule_name] ?? $rule->message;
-                        }
-                        else{
+                        } else {
                             $msg = $messages[$field] ?? $rule->message;
                         }
 
