@@ -50,10 +50,19 @@ class Validation
                     $rule = new $fn();
                     $pass = $rule->check($data, $field, ...$params);
                     if (!$pass) {
+
+                        $msg = $rule->message;
+                        if(is_array($messages[$field])){
+                            $msg = $messages[$field][$rule_name] ?? $rule->message;
+                        }
+                        else{
+                            $msg = $messages[$field] ?? $rule->message;
+                        }
+
                         // get the error message for a specific field and rule if exists
                         // otherwise get the error message from the $validation_errors
                         $errors[$field][] = sprintf(
-                            $messages[$field][$rule_name] ?? $rule->message,
+                            $msg,
                             $field,
                             ...$params
                         );
