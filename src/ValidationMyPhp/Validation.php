@@ -51,7 +51,7 @@ class Validation
                     $pass = $rule->check($data, $field, ...$params);
                     if (!$pass) {
                         $msg = $rule->message;
-                        if (is_array($messages[$field])) {
+                        if (isset($messages[$field])) {
                             $msg = $messages[$field][$rule_name] ?? $rule->message;
                         } else {
                             $msg = $messages[$field] ?? $rule->message;
