@@ -24,7 +24,7 @@ class Date
         }
 
         $d = date_create_from_format($format, $data[$field]);
-    
-        return $d && date_format($d,$format) === $data[$field];
+
+        return $d && date_format($d, $format) === $data[$field];
     }
 }
